@@ -1,0 +1,2 @@
+module Wzht::RestaurantsHelper
+end
