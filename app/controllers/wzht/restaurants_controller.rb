@@ -1,7 +1,7 @@
 class Wzht::RestaurantsController < ApplicationController
   before_action :authenticate_user!
   before_action :authenticate_admin
-  before_action :set_restaurant, only:[:show, :edit]
+  before_action :set_restaurant, only:[:show, :edit, :update]
   def index
     @restaurants = Restaurant.all
   end
@@ -21,6 +21,16 @@ class Wzht::RestaurantsController < ApplicationController
     end
   end
 
+  def update
+    if @restaurant.update(restaurant_params)
+      flash.notice = "restaurant was successfully update"
+      redirect_to wzht_restaurants_path(@restaurant)
+    else
+      flash.now.alert = "restaurant was failed to update"
+      render :edit
+    end
+  end
+
   private
 
   def restaurant_params
@@ -28,6 +38,6 @@ class Wzht::RestaurantsController < ApplicationController
   end
 
   def set_restaurant
-    @restaurant = Restaurant.find(param[:id])
+    @restaurant = Restaurant.find(params[:id])
   end
 end
