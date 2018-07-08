@@ -1,6 +1,7 @@
 class Wzht::RestaurantsController < ApplicationController
   before_action :authenticate_user!
   before_action :authenticate_admin
+  before_action :set_restaurant, only:[:show, :edit]
   def index
     @restaurants = Restaurant.all
   end
@@ -24,5 +25,9 @@ class Wzht::RestaurantsController < ApplicationController
 
   def restaurant_params
     params.require(:restaurant).permit(:name, :opening_hours, :tel, :address, :description)
+  end
+
+  def set_restaurant
+    @restaurant = Restaurant.find(param[:id])
   end
 end
