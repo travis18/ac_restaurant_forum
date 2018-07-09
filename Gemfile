@@ -5,6 +5,7 @@ ruby '2.5.1'
 
 # -------------- for restaurant forum ---------------------
 gem 'devise'
+gem 'carrierwave'
 # -------------- for restaurant forum ---------------------
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
