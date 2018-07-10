@@ -7,6 +7,7 @@ ruby '2.5.1'
 gem 'devise'
 gem 'carrierwave'
 gem 'ffaker'
+gem 'kaminari'
 # -------------- for restaurant forum ---------------------
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
