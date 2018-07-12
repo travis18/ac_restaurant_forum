@@ -1,0 +1,24 @@
+<div class="container">
+<h2>餐廳分類總表</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <th>#</th>
+      <th>Name</th>
+      <th>#</th>
+    </thead>
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <th scope="row"><%= category.id %></th>
+          <td><%= category.name %></td>
+          <td>
+            <%= link_to 'Edit', edit_wzht_category_path(category) %>
+            <%= link_to 'Delete', wzht_category_path(category), method: :delete, data: {confirm:"Are you sure?"} %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
