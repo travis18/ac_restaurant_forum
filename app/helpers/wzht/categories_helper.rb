@@ -1,0 +1,2 @@
+module Wzht::CategoriesHelper
+end
