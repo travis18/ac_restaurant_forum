@@ -1,15 +1,27 @@
-<h1>餐廳後台</h1>
 <div class="container">
-  <ul>
-    <% @restaurants.each do |restaurant| %>
-    <li>
-      <%= restaurant.name %>
-      <%= link_to 'Show', wzht_restaurant_path(restaurant) %>
-      <%= link_to 'Edit', edit_wzht_restaurant_path(restaurant) %>
-      <%= link_to 'Delete', wzht_restaurant_path(restaurant), method: :delete, data: {confirm:"Are you sure?"} %>
-    </li>
-    <% end %>
-  </ul>
+<h2>餐廳後台</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <th>#</th>
+      <th>Name</th>
+      <th>#</th>
+    </thead>
+    <tbody>
+      <% @restaurants.each do |restaurant| %>
+        <tr>
+          <th scope="row"><%= restaurant.id %></th>
+          <td><%= restaurant.name %></td>
+          <td>
+            <%= link_to 'Show', wzht_restaurant_path(restaurant) %>
+            <%= link_to 'Edit', edit_wzht_restaurant_path(restaurant) %>
+            <%= link_to 'Delete', wzht_restaurant_path(restaurant), method: :delete, data: {confirm:"Are you sure?"} %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
   <%= paginate @restaurants %>
 </div>
