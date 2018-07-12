@@ -1,5 +1,14 @@
 <div class="container">
 <h2>餐廳分類總表</h2>
+<div class="form-inline" >
+  <%= form_for [:wzht, @category] do |f| %>
+    <div class="form-group">
+      <%= f.text_field :name, placeholder: "Category Name",  class: "form-control" %>
+    </div>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+</div>
+<p></p>
 <div class="table-responsive">
   <table class="table table-striped table-bordered">
     <thead>
