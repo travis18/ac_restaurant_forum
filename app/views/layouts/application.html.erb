@@ -26,10 +26,15 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <% if current_user %>
-              <li><a>Hi, <%= current_user.email %></a></li>
+              <li><p class="navbar-text">Hi, <%= current_user.email %></p></li>
               <% if current_user.admin? %>
-                <li><%= link_to('餐廳後台', wzht_restaurants_path) %></li>
-                <li><%= link_to('餐廳分類總表', wzht_categories_path) %></li>
+                <li class="dropdown v">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">餐廳後台<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to('餐廳', wzht_restaurants_path) %></li>
+                    <li><%= link_to('餐廳分類', wzht_categories_path) %></li>
+                  </ul>
+                </li>
               <% end %>
               <li><%= link_to('登出', destroy_user_session_path, method: :delete) %></li>
               <li><%= link_to('修改密碼', edit_user_registration_path) %></li>
