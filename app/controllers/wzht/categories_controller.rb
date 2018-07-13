@@ -1,5 +1,4 @@
-class Wzht::CategoriesController < ApplicationController
-  before_action :authenticate_admin
+class Wzht::CategoriesController < Wzht::BaseController
   before_action :set_category, only:[:update, :destroy]
 
   def index
