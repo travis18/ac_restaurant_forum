@@ -18,3 +18,13 @@
 .restaurant-item .caption {
   padding: 10px;
 }
+
+.nav-pills-center {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.nav-pills-center > li {
+  float: none;
+  display: inline-block
+}
