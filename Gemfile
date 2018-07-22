@@ -10,6 +10,7 @@ gem 'ffaker'
 gem 'kaminari'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
+gem 'fog-aws'
 # -------------- for restaurant forum ---------------------
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
