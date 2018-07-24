@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-3">
+    <div class="text-center">
       <%= image_tag @user.avatar.url %>
+    </div>
     </div>
     <div class="col-xs-9">
       <h3><%= @user.name %></h3>
@@ -12,4 +14,5 @@
       <% end %>
     </div>
   </div>
+  <div class="clearfix"></div>
 </div>
