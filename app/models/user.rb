@@ -10,7 +10,11 @@ class User < ApplicationRecord
     return self.role == "admin"
   end
 
-  def email_account
-     return self.email.split("@").first
+  def get_username
+    if self.name != nil
+      return self.name
+    else
+      return self.email.split("@").first
+    end
   end
 end

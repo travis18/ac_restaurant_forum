@@ -26,7 +26,7 @@
       <!-- 顯示餐廳相關評論 -->
       <% @restaurant.comments.order('created_at desc').each do |comment| %>
         <div>
-          <h4><%= comment.user.email_account %></h4>
+          <h4><%= comment.user.get_username %></h4>
           <p><%= simple_format(comment.content) %></p>
           <p class="text-muted">
             <em><%= time_ago_in_words(comment.created_at, include_seconds: true) %> ago</em>
