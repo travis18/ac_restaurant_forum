@@ -18,12 +18,15 @@ namespace :dev do
   task fake_user: :environment do
     User.destroy_all
     # create admin user
-    User.create(email:"test@test.com", password:"123456", role:"admin")
+    User.create(email:"test@test.com", password:"123456", role:"admin", name:"neo", intro:"i am the chosen one")
     # create normal user
     20.times do |i|
+      eml = FFaker::Internet.safe_email
+      nme = eml.split("@").first
       User.create!(
-        email: FFaker::Internet.safe_email,
-        password:"123456"
+        email: eml,
+        password:"123456",
+        name: nme
       )
     end
     puts "fake user created"
