@@ -17,7 +17,7 @@ class User < ApplicationRecord
     if self.name != nil
       return self.name
     else
-      return self.email.s=plit("@").first
+      return self.email.split("@").first
     end
   end
 end

@@ -5,4 +5,8 @@ class Restaurant < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :collected_users, through: :favorites, source: :user
+
+  def is_favorite?(user)
+    self.collected_users.include?(user)
+  end
 end

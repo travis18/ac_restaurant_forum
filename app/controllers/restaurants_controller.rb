@@ -7,7 +7,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+    @restaurant = get_restaurant
     @comment = Comment.new
   end
 
@@ -17,4 +17,22 @@ class RestaurantsController < ApplicationController
     @nav = "feeds"
   end
 
+  def favorite
+    @restaurant = get_restaurant
+    @restaurant.favorites.create!(user:current_user)
+    redirect_back(fallback_location: root_path)
+  end
+
+  def unfavorite
+    @restaurant = get_restaurant
+    favorites = Favorite.where(restaurant: @restaurant, user: current_user)
+    favorites.destroy_all
+    redirect_back(fallback_location: root_path)
+  end
+
+  private
+
+  def get_restaurant
+    Restaurant.find(params[:id])
+  end
 end
