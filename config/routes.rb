@@ -14,8 +14,13 @@ Rails.application.routes.draw do
     member do
       get :dashboard
 
+      # for favorite/unfavorite
       post :favorite
       post :unfavorite
+
+      # for like/unlike
+      post :like
+      post :unlike
     end
   end
   resources :categories, only:[:show]
