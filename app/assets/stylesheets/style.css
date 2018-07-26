@@ -49,7 +49,7 @@
   width: 50px;
   margin: 10px;
 }
-
+/* -------------------- user profile page ------------------------ */
 .my-restaurant {
   display: inline-block;
   text-align: center;
@@ -58,4 +58,8 @@
 
 .my-restaurant>div {
   height: 60px;
+}
+/* ------------------------ feed page ------------------------------- */
+.feed-panel {
+  padding: 0;
 }
