@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :restrict_with_error
   has_many :restaurants, through: :comments
   has_many :favorites, dependent: :destroy
-  has_many :favorite_restaurants, thorugh: :favorites, source: :restaurant
+  has_many :favorite_restaurants, through: :favorites, source: :restaurant
   mount_uploader :avatar, AvatarUploader
 
   def admin?
@@ -17,7 +17,7 @@ class User < ApplicationRecord
     if self.name != nil
       return self.name
     else
-      return self.email.split("@").first
+      return self.email.s=plit("@").first
     end
   end
 end
