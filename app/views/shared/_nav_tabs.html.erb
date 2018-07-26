@@ -1,5 +1,6 @@
 <ul class="nav nav-tabs">
   <li role="presentation" class="<%= "active" if @nav=="index" %>"><%= link_to "首頁", restaurants_path %></li>
   <li role="presentation" class="<%= "active" if @nav=="feeds" %>"><%= link_to "動態", feeds_restaurants_path %></li>
+  <li role="presentation" class="<%= "active" if @nav=="ranking" %>"><%= link_to "TOP10人氣餐廳", ranking_restaurants_path %></li>
 </ul>
 <div class="clearfix"></div>

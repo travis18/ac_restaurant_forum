@@ -63,3 +63,8 @@
 .feed-panel {
   padding: 0;
 }
+
+/* ------------------------ ranking page ------------------------------- */
+.ranking-item {
+  margin-bottom: 15px;
+}

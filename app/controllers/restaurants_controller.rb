@@ -17,6 +17,11 @@ class RestaurantsController < ApplicationController
     @nav = "feeds"
   end
 
+  def ranking
+    @top_restaurants = Restaurant.order(favorites_count: :desc).limit(10)
+    @nav = "ranking"
+  end
+
   def favorite
     @restaurant = get_restaurant
     @restaurant.favorites.create!(user:current_user)
@@ -48,4 +53,5 @@ class RestaurantsController < ApplicationController
   def get_restaurant
     Restaurant.find(params[:id])
   end
+
 end

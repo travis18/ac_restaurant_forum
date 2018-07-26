@@ -46,4 +46,22 @@ namespace :dev do
     end
     puts "fake comment created!"
   end
+
+  task fake_favorite: :environment do
+    Favorite.destroy_all
+    # reset all favorites_count in Restaurant table
+    res = Restaurant.all
+    res.update(favorites_count:0)
+
+    # all users collect 100 restaurants
+    @users = User.all
+    @users.each do |r|
+      100.times do |i|
+        r.favorites.create!(
+          restaurant: Restaurant.all.sample
+        )
+      end
+    end
+    puts "fake favorite created!"
+  end
 end
