@@ -3,4 +3,6 @@ class Restaurant < ApplicationRecord
   mount_uploader :image, PhotoUploader
   belongs_to :category, optional: true
   has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :collected_users, through: :favorites, source: :user
 end
