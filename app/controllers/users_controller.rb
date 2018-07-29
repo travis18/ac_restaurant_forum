@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def index
+    @users = User.all
+  end
+
   def update
     if current_user.update(profile_params)
       flash.notice = "Your profile has been updated successfully"
