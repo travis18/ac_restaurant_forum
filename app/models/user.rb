@@ -17,6 +17,10 @@ class User < ApplicationRecord
     return self.role == "admin"
   end
 
+  def following?(user)
+    self.followings.include?(user)
+  end
+
   def get_username
     if self.name != nil
       return self.name
