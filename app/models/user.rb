@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_restaurants, through: :likes, source: :restaurant
   has_many :followships, dependent: :destroy
-  has_many :following_users, through: :followships, source: :user
+  has_many :followings, through: :followships, source: :user
   mount_uploader :avatar, AvatarUploader
 
   def admin?
