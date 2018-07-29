@@ -11,6 +11,9 @@ class User < ApplicationRecord
   has_many :liked_restaurants, through: :likes, source: :restaurant
   has_many :followships, dependent: :destroy
   has_many :followings, through: :followships
+  # follower settings
+  has_many :inverse_followships, class_name: "Followship", foreign_key: :following_id
+  has_many :followers, through: :inverse_followships, source: :user
   mount_uploader :avatar, AvatarUploader
 
   def admin?
