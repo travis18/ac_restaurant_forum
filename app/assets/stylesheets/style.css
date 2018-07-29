@@ -68,3 +68,14 @@
 .ranking-item {
   margin-bottom: 15px;
 }
+
+/* ------------------------ user ranking page ------------------------------- */
+
+.user-item {
+  margin-bottom: 15px;
+}
+
+.user-item img {
+  
+  height: 128px;
+}

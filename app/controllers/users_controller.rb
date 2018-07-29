@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @nav = "rankingUsers"
   end
 
   def update
