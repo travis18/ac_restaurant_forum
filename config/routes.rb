@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update, :index]
 
   resources :followships, only: [:create, :destroy]
+  resources :friendships, only: [:create, :destroy]
 
   resources :restaurants, only: [:index, :show] do
     resources :comments, only: [:create, :destroy]
