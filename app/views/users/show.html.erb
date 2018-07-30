@@ -11,6 +11,7 @@
       <p><%= simple_format(@user.intro) %></p>
       <% if @user == current_user %>
         <%= link_to "Edit Profile",  edit_user_path(@user), class: "btn btn-primary" %>
+        <%= link_to "Friends", friends_list_user_path(@user), class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>

@@ -17,6 +17,8 @@ class User < ApplicationRecord
   # friend settings
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
+  has_many :inverse_friendships, class_name: "Friendship", foreign_key: :friend_id
+  has_many :fans, through: :inverse_friendships, source: :user
   mount_uploader :avatar, AvatarUploader
 
   def admin?
@@ -29,6 +31,10 @@ class User < ApplicationRecord
 
   def friend?(user)
     self.friends.include?(user)
+  end
+
+  def all_friends
+    (self.fans + self.friends).uniq
   end
 
   def get_username
